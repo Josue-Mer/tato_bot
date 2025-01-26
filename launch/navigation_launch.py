@@ -20,7 +20,7 @@ from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, SetEnvironmentVariable
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
-from nav2_common.launch import RewrittenYaml
+from nav2_common.launch import RewrittenYaml 
 
 
 def generate_launch_description():
@@ -86,8 +86,8 @@ def generate_launch_description():
         DeclareLaunchArgument(
             'default_bt_xml_filename',
             default_value=os.path.join(
-                get_package_share_directory('nav2_bt_navigator'),
-                'behavior_trees', 'navigate_w_replanning_and_recovery.xml'),
+                get_package_share_directory('nav2_bt_navigator'), #navigate_w_replanning_and_recovery.xml              follow_point.xml
+                'behavior_trees', 'follow_point.xml'),
             description='Full path to the behavior tree xml file to use'),
 
         DeclareLaunchArgument(

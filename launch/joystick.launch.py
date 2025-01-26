@@ -14,7 +14,7 @@ def generate_launch_description():
     joy_node = Node(
             package='joy',
             executable='joy_node',
-            parameters=[joy_params], #, {'use_sim_time': use_sim_time}
+            parameters=[joy_params, {'use_sim_time': use_sim_time}],
          )
 
     teleop_node = Node(
@@ -22,8 +22,14 @@ def generate_launch_description():
             executable='teleop_node',
             name='teleop_node',
             parameters=[joy_params, {'use_sim_time': use_sim_time}],
-            # remappings=[('/cmd_vel','/diff_cont/cmd_vel_unstamped')]
             remappings=[('/cmd_vel','/cmd_vel_joy')]
+         )
+    
+    joy_button_action = Node(
+            package='tato_bot', 
+            executable='joy_button_action', 
+            name='joy_button_action',
+            parameters=[{'use_sim_time': use_sim_time}],
          )
 
     # twist_stamper = Node(
@@ -42,5 +48,6 @@ def generate_launch_description():
             description='Use sim time if true'),
         joy_node,
         teleop_node,
+        joy_button_action,
         # twist_stamper       
     ])

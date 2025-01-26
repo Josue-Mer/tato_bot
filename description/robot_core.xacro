@@ -47,7 +47,7 @@
     <xacro:property name="chassis_length" value="0.64"/>
     <xacro:property name="chassis_width" value="0.44"/>
     <xacro:property name="chassis_height" value="0.16078"/>
-    <xacro:property name="chassis_mass" value="2.3"/> <!--0.5kg/m-->
+    <xacro:property name="chassis_mass" value="4.22"/> <!--0.5kg/m ; 2.3 without luggage base--> 
 
     <xacro:property name="wheel_radius" value="0.084"/>
     <xacro:property name="wheel_thickness" value="0.058"/>
